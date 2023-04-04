@@ -13,23 +13,23 @@ class App extends Component {
     return (
       <>
         <header>
-          <img className="logo" src={logo} />
+          <img className="logo" src={logo} alt="" />
 
           <nav>
             <ul>
               <li>
-                <a href="#" class="active">
+                <a href="#home" class="active">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="#services">Services</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </nav>
@@ -44,7 +44,7 @@ class App extends Component {
             <div class="content">
               <div class="card-grid">
                 <div class="card">
-                  <img src={bookkeeping} alt="Card Image" />
+                  <img src={bookkeeping} alt="" />
                   <div class="card-content">
                     <h3>Bookkeeping</h3>
                     <p>
@@ -58,7 +58,7 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={payroll} alt="Card Image" />
+                  <img src={payroll} alt="" />
                   <div class="card-content">
                     <h3>Payroll</h3>
                     <p>
@@ -72,7 +72,7 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={vat} alt="Card Image" />
+                  <img src={vat} alt="" />
                   <div class="card-content">
                     <h3>VAT Administration</h3>
                     <p>
@@ -89,7 +89,7 @@ class App extends Component {
                 </div>
 
                 <div class="card">
-                  <img src={creditcontrol} alt="Card Image" />
+                  <img src={creditcontrol} alt="" />
                   <div class="card-content">
                     <h3>Credit Control</h3>
                     <p>
@@ -106,7 +106,7 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={tax} alt="Card Image" />
+                  <img src={tax} alt="" />
                   <div class="card-content">
                     <h3>RCT (Relevant Contract Tax)</h3>
                     <p>
@@ -146,7 +146,7 @@ class App extends Component {
           </section>
         </main>
         <footer>
-          <p>Copyright © 2023</p>
+          <p>Copyright NB Bookkeeping © 2023</p>
         </footer>
       </>
     );
