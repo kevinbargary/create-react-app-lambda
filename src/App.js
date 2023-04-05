@@ -1,50 +1,162 @@
-import React, { Component } from "react";
-import logo from "./Logo.png";
-import bookkeeping from "./bookkeeping.jpg";
-import vat from "./vat.jpg";
-import creditcontrol from "./creditcontrol.jpg";
-import payroll from "./payroll.jpg";
-import tax from "./tax.jpg";
+import React, { useEffect } from "react";
+import LazyLoad from "react-lazyload";
+import logo from "./images/Logo.png";
+import stress from "./images/stress-icon.svg";
+import cloud from "./images/data-cloud-icon.svg";
+import idea from "./images/idea-icon.svg";
+import bookkeeping from "./images/bookkeeping.jpg";
+import vat from "./images/vat.jpg";
+import creditcontrol from "./images/creditcontrol.jpg";
+import payroll from "./images/payroll.jpg";
+import tax from "./images/tax.jpg";
+import ContactForm from "./ContactForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faLinkedinIn,
+  faCloudflare,
+} from "@fortawesome/free-brands-svg-icons";
 
-import "./App.css";
+import "./styles/App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <header>
-          <img className="logo" src={logo} alt="" />
+function LoadEvents() {
+  const header = document.querySelector("header");
 
-          <nav>
-            <ul>
-              <li>
-                <a href="#home" class="active">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <section class="section1">
-            <div class="content">
-              <p>Keeping your books balanced and stress-free.</p>
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+}
+
+function App() {
+  useEffect(() => LoadEvents(), []);
+  return (
+    <>
+      <header>
+        <img className="logo" src={logo} alt="" />
+
+        <nav>
+          <ul>
+            <li>
+              <a href="#home" class="active">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="section1" id="home">
+          <div class="content">
+            <p>Keeping your books balanced and stress-free.</p>
+          </div>
+        </section>
+        <section class="about" id="about">
+          <div class="container">
+            <h2>About</h2>
+            <p>
+              NB Bookkeeping was founded in Tipperary in 2023, and is run by
+              Nicola Bargary, a professionally qualified Bookkeeper, proficient
+              in multiple accounting softwares such as Sage, Surf Accounts,
+              Quickbooks and Xero. With 10+ years experience working both in the
+              UK and Ireland in an accounts department, I have had experience
+              working in all aspects of Accounting, from AP/AR to the
+              preparation of Management Accounts, working across a variety of
+              sectors including Healthcare, E-Commerce, Haulage, Construction,
+              and Manufacturing. As a small operation, I can provide a
+              personalised service, tailored to your business needs. I am quick,
+              efficient and accurate, allowing you to have an up to date
+              snapshot on the financial health of your business. By providing
+              you with a virtual accounts department, I can take the stress out
+              of paperwork, giving you peace of mind, and enabling you to focus
+              on growing your business.
+            </p>
+            <div class="infographics">
+              <div class="infographic">
+                <img
+                  src={idea}
+                  alt="Graphic 1"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Problem</h3>
+                <p>
+                  Bookkeeping services in Ireland are in high demand,
+                  particularly among small and medium-sized businesses who may
+                  not have the resources or expertise to manage their own
+                  financial records. Outsourcing these services to a
+                  professional provider can save businesses time and money,
+                  while ensuring compliance with Irish tax and accounting
+                  regulations.
+                </p>
+              </div>
+              <div class="infographic">
+                <img
+                  src={stress}
+                  alt="Graphic 2"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Outsource stress</h3>
+                <p>
+                  Bookkeeping services in Ireland are often tailored to meet the
+                  specific needs of individual businesses, We offer a range of
+                  services including payroll management, tax filing, financial
+                  reporting, and more. This flexibility allows businesses to
+                  choose the level of support they require, based on their size,
+                  industry, and budget.
+                </p>
+              </div>
+              <div class="infographic">
+                <img
+                  src={cloud}
+                  alt="Graphic 3"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Future proofing</h3>
+                <p>
+                  With the growth of cloud-based bookkeeping software and online
+                  services, bookkeeping services in Ireland are becoming more
+                  accessible and affordable than ever before. We can offer
+                  real-time access to financial data, automated reporting, and
+                  other features that can help businesses to streamline their
+                  financial operations and make better-informed decisions.
+                </p>
+              </div>
             </div>
-          </section>
-          <section class="section2">
+          </div>
+        </section>
+
+        <section class="section2" id="services">
+          <div class="container">
+            <h2>Services Provided</h2>
             <div class="content">
               <div class="card-grid">
                 <div class="card">
-                  <img src={bookkeeping} alt="" />
+                  <LazyLoad>
+                    <img src={bookkeeping} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Bookkeeping</h3>
                     <p>
@@ -58,7 +170,9 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={payroll} alt="" />
+                  <LazyLoad>
+                    <img src={payroll} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Payroll</h3>
                     <p>
@@ -72,7 +186,9 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={vat} alt="" />
+                  <LazyLoad>
+                    <img src={vat} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>VAT Administration</h3>
                     <p>
@@ -89,7 +205,9 @@ class App extends Component {
                 </div>
 
                 <div class="card">
-                  <img src={creditcontrol} alt="" />
+                  <LazyLoad>
+                    <img src={creditcontrol} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Credit Control</h3>
                     <p>
@@ -106,7 +224,9 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={tax} alt="" />
+                  <LazyLoad>
+                    <img src={tax} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>RCT (Relevant Contract Tax)</h3>
                     <p>
@@ -122,35 +242,32 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </section>
-          <section class="section3">
-            <div class="content">
-              <p>
-                <form id="contact-form" method="post" action="submit-form.php">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" required />
+          </div>
+        </section>
+        <section id="contact" class="section3">
+          <ContactForm />
+        </section>
+      </main>
+      <footer>
+        <p>Copyright NB Bookkeeping © 2023</p>
 
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required />
-
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" required />
-
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" required></textarea>
-
-                  <button type="submit">Send</button>
-                </form>
-              </p>
-            </div>
-          </section>
-        </main>
-        <footer>
-          <p>Copyright NB Bookkeeping © 2023</p>
-        </footer>
-      </>
-    );
-  }
+        <div className="social-media">
+          <a href="https://www.facebook.com">
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          <a href="https://twitter.com">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href="https://www.instagram.com">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="https://www.linkedin.com">
+            <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+        </div>
+      </footer>
+    </>
+  );
 }
 
 export default App;

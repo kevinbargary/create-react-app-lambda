@@ -10,6 +10,27 @@ body {
   font-size: 16px;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px; /* add some space between icons */
+  margin-bottom: 50px;
+}
+
+.social-media a {
+  color: black;
+}
+
+.social-media a .svg-inline--fa {
+  width: 32px;
+  height: 32px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -18,10 +39,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  transition: box-shadow 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 1;
 }
+
+header.scrolled {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* JavaScript to add "scrolled" class when header is scrolled */
 
 .logo {
   height: 100px;
@@ -50,10 +77,6 @@ nav ul li a {
   transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #f7f7f7;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -68,7 +91,7 @@ section {
 }
 
 .section1 {
-  background-image: url("./splash.jpg");
+  background-image: url("../images/splash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -99,12 +122,17 @@ section {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 50px;
 }
+.about {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+}
 
 .section2 {
   background-color: #f7f7f7;
 }
 
 .section3 {
+  display: inline-block;
   background-color: #fff;
 }
 
