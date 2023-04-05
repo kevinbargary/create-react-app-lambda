@@ -51,11 +51,6 @@
   transition: background-color 0.3s ease;
 }
 
-.about {
-  background-color: #f5f5f5;
-  padding: 30px 0;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -99,6 +94,7 @@ p {
 .infographic p {
   font-size: 16px;
   line-height: 1.5;
+  text-align: left;
 }
 
 nav ul li a {
@@ -139,86 +135,4 @@ nav ul li:hover ul {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
-
-/* Set the height of the parallax section */
-.parallax-section {
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Set the background image and make it cover the entire section */
-.parallax-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../images/splash.jpg);
-  background-size: cover;
-  background-position: center;
-  transform: translateZ(0);
-}
-
-/* Add the parallax effect by translating the container on scroll */
-.parallax-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.parallax-container:hover::before {
-  opacity: 1;
-}
-
-.parallax-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.7)
-  );
-  z-index: 2;
-}
-
-.parallax-content {
-  position: relative;
-  z-index: 3;
-}
-
-.parallax-container[data-speed="0.25"] {
-  transform: translateZ(0) translateX(-25%);
-}
-
-.parallax-container[data-speed="0.5"] {
-  transform: translateZ(0) translateX(-50%);
-}
-
-.parallax-container[data-speed="0.75"] {
-  transform: translateZ(0) translateX(-75%);
-}
-
-.parallax-container[data-speed="1.25"] {
-  transform: translateZ(0) translateX(25%);
-}
-
-.parallax-container[data-speed="1.5"] {
-  transform: translateZ(0) translateX(50%);
-}
-
-.parallax-container[data-speed="1.75"] {
-  transform: translateZ(0) translateX(75%);
 }

@@ -39,14 +39,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  transition: background-color 0.5s ease;
+  transition: box-shadow 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 1;
 }
 
 header.scrolled {
-  background-color: #111;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* JavaScript to add "scrolled" class when header is scrolled */
@@ -122,6 +121,10 @@ section {
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 50px;
+}
+.about {
+  background-color: #f5f5f5;
+  padding: 30px 0;
 }
 
 .section2 {

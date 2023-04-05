@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
+import LazyLoad from "react-lazyload";
 import logo from "./images/Logo.png";
+import stress from "./images/stress-icon.svg";
+import cloud from "./images/data-cloud-icon.svg";
+import idea from "./images/idea-icon.svg";
 import bookkeeping from "./images/bookkeeping.jpg";
 import vat from "./images/vat.jpg";
 import creditcontrol from "./images/creditcontrol.jpg";
@@ -12,6 +16,7 @@ import {
   faTwitter,
   faInstagram,
   faLinkedinIn,
+  faCloudflare,
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/App.css";
@@ -60,7 +65,7 @@ function App() {
             <p>Keeping your books balanced and stress-free.</p>
           </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
           <div class="container">
             <h2>About</h2>
             <p>
@@ -82,30 +87,61 @@ function App() {
             </p>
             <div class="infographics">
               <div class="infographic">
-                <img src="graphic-1.png" alt="Graphic 1" />
-                <h3>Stat 1</h3>
+                <img
+                  src={idea}
+                  alt="Graphic 1"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Problem</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  euismod, tortor non convallis eleifend, eros ante mattis
-                  augue, non porta neque massa ut lorem.
+                  Bookkeeping services in Ireland are in high demand,
+                  particularly among small and medium-sized businesses who may
+                  not have the resources or expertise to manage their own
+                  financial records. Outsourcing these services to a
+                  professional provider can save businesses time and money,
+                  while ensuring compliance with Irish tax and accounting
+                  regulations.
                 </p>
               </div>
               <div class="infographic">
-                <img src="graphic-2.png" alt="Graphic 2" />
-                <h3>Stat 2</h3>
+                <img
+                  src={stress}
+                  alt="Graphic 2"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Outsource stress</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  euismod, tortor non convallis eleifend, eros ante mattis
-                  augue, non porta neque massa ut lorem.
+                  Bookkeeping services in Ireland are often tailored to meet the
+                  specific needs of individual businesses, We offer a range of
+                  services including payroll management, tax filing, financial
+                  reporting, and more. This flexibility allows businesses to
+                  choose the level of support they require, based on their size,
+                  industry, and budget.
                 </p>
               </div>
               <div class="infographic">
-                <img src="graphic-3.png" alt="Graphic 3" />
-                <h3>Stat 3</h3>
+                <img
+                  src={cloud}
+                  alt="Graphic 3"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                />
+                <h3>Future proofing</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  euismod, tortor non convallis eleifend, eros ante mattis
-                  augue, non porta neque massa ut lorem.
+                  With the growth of cloud-based bookkeeping software and online
+                  services, bookkeeping services in Ireland are becoming more
+                  accessible and affordable than ever before. We can offer
+                  real-time access to financial data, automated reporting, and
+                  other features that can help businesses to streamline their
+                  financial operations and make better-informed decisions.
                 </p>
               </div>
             </div>
@@ -118,7 +154,9 @@ function App() {
             <div class="content">
               <div class="card-grid">
                 <div class="card">
-                  <img src={bookkeeping} alt="" />
+                  <LazyLoad>
+                    <img src={bookkeeping} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Bookkeeping</h3>
                     <p>
@@ -132,7 +170,9 @@ function App() {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={payroll} alt="" />
+                  <LazyLoad>
+                    <img src={payroll} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Payroll</h3>
                     <p>
@@ -146,7 +186,9 @@ function App() {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={vat} alt="" />
+                  <LazyLoad>
+                    <img src={vat} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>VAT Administration</h3>
                     <p>
@@ -163,7 +205,9 @@ function App() {
                 </div>
 
                 <div class="card">
-                  <img src={creditcontrol} alt="" />
+                  <LazyLoad>
+                    <img src={creditcontrol} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>Credit Control</h3>
                     <p>
@@ -180,7 +224,9 @@ function App() {
                   </div>
                 </div>
                 <div class="card">
-                  <img src={tax} alt="" />
+                  <LazyLoad>
+                    <img src={tax} alt="" />
+                  </LazyLoad>
                   <div class="card-content">
                     <h3>RCT (Relevant Contract Tax)</h3>
                     <p>
