@@ -16,7 +16,6 @@ import {
   faTwitter,
   faInstagram,
   faLinkedinIn,
-  faCloudflare,
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/App.css";
