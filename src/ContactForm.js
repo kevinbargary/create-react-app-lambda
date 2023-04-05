@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./styles/ContactForm.css";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
   useEffect(() => {
     // get all form elements
     const formElements = document.querySelectorAll(
@@ -41,44 +34,6 @@ export default function ContactForm() {
     window.addEventListener("load", animateFormElements);
     window.addEventListener("scroll", animateFormElements);
   }, []);
-
-  const [errors, setErrors] = useState({});
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // validate form data
-    const errors = {};
-    if (!formData.name) {
-      errors.name = "Name is required";
-    }
-    if (!formData.email) {
-      errors.email = "Email is required";
-    }
-    if (!formData.subject) {
-      errors.subject = "Subject is required";
-    }
-    if (!formData.message) {
-      errors.message = "Message is required";
-    }
-    if (errors) {
-      setErrors(errors);
-      return;
-    }
-
-    // construct mailto URL with form data
-    const url = `mailto:youremail@example.com?subject=${formData.subject}&body=${formData.message}`;
-
-    // open email client with mailto URL
-    window.location.href = url;
-  };
 
   return (
     <form class="contact-form">
