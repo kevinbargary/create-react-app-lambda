@@ -1,0 +1,224 @@
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 350px;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.about {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.infographics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infographic {
+  flex-basis: calc(33.33% - 20px);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.infographic img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.infographic h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.infographic p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+nav ul li a {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #111;
+}
+
+nav ul li a:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #111;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+nav ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Set the height of the parallax section */
+.parallax-section {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Set the background image and make it cover the entire section */
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/splash.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(0);
+}
+
+/* Add the parallax effect by translating the container on scroll */
+.parallax-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.parallax-container:hover::before {
+  opacity: 1;
+}
+
+.parallax-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 2;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 3;
+}
+
+.parallax-container[data-speed="0.25"] {
+  transform: translateZ(0) translateX(-25%);
+}
+
+.parallax-container[data-speed="0.5"] {
+  transform: translateZ(0) translateX(-50%);
+}
+
+.parallax-container[data-speed="0.75"] {
+  transform: translateZ(0) translateX(-75%);
+}
+
+.parallax-container[data-speed="1.25"] {
+  transform: translateZ(0) translateX(25%);
+}
+
+.parallax-container[data-speed="1.5"] {
+  transform: translateZ(0) translateX(50%);
+}
+
+.parallax-container[data-speed="1.75"] {
+  transform: translateZ(0) translateX(75%);
+}
