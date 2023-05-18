@@ -33,6 +33,11 @@ function LoadEvents() {
 }
 
 function App() {
+  const businessAddress = "Bansha, Co. Tipperary, Ireland";
+
+  const googleMapsEmbedLink =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9726.822094071476!2d-8.07459562060569!3d52.448248980698864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485cb35e4935eae9%3A0xa00c7a9973196a0!2sBallinlough%20East%2C%20Bansha%2C%20Co.%20Tipperary!5e0!3m2!1sen!2sie!4v1684435445541!5m2!1sen!2sie";
+
   useEffect(() => LoadEvents(), []);
   return (
     <>
@@ -244,25 +249,47 @@ function App() {
           </div>
         </section>
         <section id="contact" class="section3">
-          <ContactForm />
+          <div class="container">
+            <h2>Contact Us</h2>
+            <p>
+              Email:{" "}
+              <a href="mailto:nbbookkeepingco@gmail.com?subject=Bookkeeping Service Enquiry ">
+                nbbookkeepingco@gmail.com{" "}
+              </a>
+            </p>
+            <p>Phone: 087 112 8358</p>
+            <p>Address: {businessAddress}</p>
+            <div style={{ width: "100%", height: "400px" }}>
+              <iframe
+                title="Google Map"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src={googleMapsEmbedLink}
+              ></iframe>
+            </div>
+          </div>
         </section>
       </main>
       <footer>
         <p>Copyright NB Bookkeeping © 2023</p>
 
         <div className="social-media">
-          <a href="https://www.facebook.com">
+          <a href="https://www.facebook.com/profile.php?id=100090037899468">
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
           <a href="https://twitter.com">
             <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href="https://www.instagram.com">
+          {/*<a href="https://www.instagram.com">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://www.linkedin.com">
+         <a href="https://www.linkedin.com">
             <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
+          </a>*/}
         </div>
       </footer>
     </>

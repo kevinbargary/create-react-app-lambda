@@ -1,124 +1,33 @@
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.contact-form h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.contact-section h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
+.contact-section p {
   font-size: 18px;
   margin-bottom: 5px;
-  display: block;
 }
 
-.form-group input,
-.form-group textarea {
-  border: none;
-  background: #f3f3f3;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  transition: all 0.3s ease;
+.contact-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-section .map-container {
   width: 100%;
-  transform: translateY(50px);
-  opacity: 0;
+  height: 400px;
+  margin-top: 20px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background: #eee;
-}
-
-.form-group textarea {
-  height: 150px;
-}
-
-.contact-form button[type="submit"] {
-  border: none;
-  background: #ff6347;
-  color: #fff;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+.contact-section iframe {
   width: 100%;
-  transform: translateY(50px);
-  opacity: 0;
-}
-
-.contact-form button[type="submit"]:hover {
-  background: #e63e00;
-}
-
-.contact-form .error {
-  color: #ff6347;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* Animations */
-.form-group input.animated,
-.form-group textarea.animated,
-.contact-form button[type="submit"].animated {
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-}
-
-.form-group input.animated {
-  animation-name: slideInFromLeft;
-}
-
-.form-group textarea.animated {
-  animation-name: slideInFromRight;
-}
-
-.contact-form button[type="submit"].animated {
-  animation-name: slideInFromBottom;
-}
-
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromBottom {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  height: 100%;
+  border: none;
 }
