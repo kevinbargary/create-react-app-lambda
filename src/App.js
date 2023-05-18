@@ -9,14 +9,9 @@ import vat from "./images/vat.jpg";
 import creditcontrol from "./images/creditcontrol.jpg";
 import payroll from "./images/payroll.jpg";
 import tax from "./images/tax.jpg";
-import ContactForm from "./ContactForm";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/App.css";
 
