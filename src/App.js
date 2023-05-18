@@ -11,7 +11,7 @@ import payroll from "./images/payroll.jpg";
 import tax from "./images/tax.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/App.css";
 
@@ -252,6 +252,14 @@ function App() {
                 nbbookkeepingco@gmail.com{" "}
               </a>
             </p>
+            <p>
+              Social Media:{" "}
+              <span className="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100090037899468">
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </a>
+              </span>
+            </p>
             <p>Phone: 087 112 8358</p>
             <p>Address: {businessAddress}</p>
             <div style={{ width: "100%", height: "400px" }}>
@@ -270,21 +278,8 @@ function App() {
         </section>
       </main>
       <footer>
-        <p>Copyright NB Bookkeeping © 2023</p>
-
-        <div className="social-media">
-          <a href="https://www.facebook.com/profile.php?id=100090037899468">
-            <FontAwesomeIcon icon={faFacebookF} />
-          </a>
-          <a href="https://twitter.com">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          {/*<a href="https://www.instagram.com">
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-         <a href="https://www.linkedin.com">
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>*/}
+        <div class="container">
+          <p>Copyright NB Bookkeeping © 2023</p>
         </div>
       </footer>
     </>

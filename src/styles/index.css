@@ -9,26 +9,32 @@ body {
   font-size: 22px;
   font-size: 16px;
 }
-
 footer {
+  padding: 20px 0;
+}
+
+footer.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.social-media {
-  display: flex;
-  gap: 10px; /* add some space between icons */
-  margin-bottom: 50px;
+footer.container p {
+  font-size: 14px;
+  margin: 0;
 }
 
 .social-media a {
   color: black;
+  margin-right: 10px;
+  font-size: 24px;
 }
 
-.social-media a .svg-inline--fa {
-  width: 32px;
-  height: 32px;
+.social-media a:hover {
+  color: #007bff;
 }
 
 header {
